@@ -1,4 +1,4 @@
-[07.08.2026 00:27] r.o'tkirov: // ============================================================
+// ============================================================
 // Логика формы и переключения языка.
 // Для изменения текста туров редактируйте tours.js,
 // для изменения интерфейсных текстов — ui-strings.js.
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function preselectTourFromUrl(tourParam) {
   if (!tourParam) return;
   const index = parseInt(tourParam, 10) - 1; // в боте туры нумеруются с 1
-  const radio = document.getElementById(tour-${index});
+  const radio = document.getElementById(`tour-${index}`);
   if (!radio) return;
   radio.checked = true;
   document.getElementById("request-form").scrollIntoView({ behavior: "smooth" });
@@ -82,13 +82,13 @@ function renderTours(lang) {
 
   list.innerHTML = "";
 
-  if (typeof TOURS === "undefined"  !Array.isArray(TOURS)  TOURS.length === 0) {
-    list.innerHTML = <p class="tours-loading">${escapeHtml(strings.toursLoading || "…")}</p>;
+  if (typeof TOURS === "undefined" || !Array.isArray(TOURS) || TOURS.length === 0) {
+    list.innerHTML = `<p class="tours-loading">${escapeHtml(strings.toursLoading || "…")}</p>`;
     return;
   }
 
   TOURS.forEach((tour, index) => {
-    const id = tour-${index};
+    const id = `tour-${index}`;
     const title = (tour.title && tour.title[lang]) || "";
     const description = (tour.description && tour.description[lang]) || "";
     const price = (tour.price && tour.price[lang]) || "";
@@ -98,23 +98,23 @@ function renderTours(lang) {
     card.setAttribute("for", id);
 
     const priceHtml = price
-      ? <span class="tour-price">${escapeHtml(price)}</span>
+      ? `<span class="tour-price">${escapeHtml(price)}</span>`
       : "";
 
     card.innerHTML = `
       <input type="radio" name="tour" id="${id}" value="${escapeHtml(title)}" required>
-[07.08.2026 00:27] r.o'tkirov: <span class="tour-body">
+      <span class="tour-body">
         <span class="tour-title">${escapeHtml(title)}</span>
         <span class="tour-desc">${escapeHtml(description)}</span>
         ${priceHtml}
       </span>
       <span class="tour-mark" aria-hidden="true"></span>
-    ;
+    `;
     list.appendChild(card);
   });
 
   if (checkedIndex !== null) {
-    const toRecheck = document.getElementById(tour-${checkedIndex});
+    const toRecheck = document.getElementById(`tour-${checkedIndex}`);
     if (toRecheck) toRecheck.checked = true;
   }
 }
@@ -204,9 +204,9 @@ function isValidPhone(value) {
 
 function normalizePhone(value) {
   const digits = value.replace(/\D/g, "");
-  if (digits.startsWith("998")) return +${digits};
-  if (digits.length === 9) return +998${digits};
-  return +${digits}`;
+  if (digits.startsWith("998")) return `+${digits}`;
+  if (digits.length === 9) return `+998${digits}`;
+  return `+${digits}`;
 }
 
 function showError(id) {
