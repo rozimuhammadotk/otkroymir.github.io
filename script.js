@@ -1,4 +1,4 @@
-// ============================================================
+[07.08.2026 00:27] r.o'tkirov: // ============================================================
 // Логика формы и переключения языка.
 // Для изменения текста туров редактируйте tours.js,
 // для изменения интерфейсных текстов — ui-strings.js.
@@ -7,15 +7,34 @@
 
 // Вебхук бота — вставьте сюда ссылку, когда бот будет готов
 // (получите её командой /getformurl в боте на TBC)
-const WEBHOOK_URL = "";
+const WEBHOOK_URL = "https://api.telebotcreator.com/new-webhook?data=gAAAAABqdN0UJ8kP9uP_MH_OldLR3etGuA2_0MNN6ZWPvZzXd-vDwxSFK3k_DfRh4zLx0gLE1_lATwfHaIUh2ZBUS5DJFQFsNg8N_x0AgevDv1FnoPV0e6lWS8GnNwEFbA9D_0MeMnKfRomRNYUfdy1dwCMSZQ5l42ronx_35SsMqZoOuUgfEs1JzDIwClgnIbFLB6DQoAzT";
 
 let currentLang = "ru";
 
 document.addEventListener("DOMContentLoaded", () => {
   setupLangSwitch();
-  applyLanguage(currentLang);
+
+  // Если открыто из бота со ссылкой вида ?lang=ru&tour=2 —
+  // сразу переключаемся на нужный язык и выделяем нужный тур.
+  const params = new URLSearchParams(window.location.search);
+  const langParam = params.get("lang");
+  const startLang = (langParam && typeof UI_STRINGS !== "undefined" && UI_STRINGS[langParam])
+    ? langParam
+    : currentLang;
+
+  applyLanguage(startLang);
+  preselectTourFromUrl(params.get("tour"));
   setupForm();
 });
+
+function preselectTourFromUrl(tourParam) {
+  if (!tourParam) return;
+  const index = parseInt(tourParam, 10) - 1; // в боте туры нумеруются с 1
+  const radio = document.getElementById(tour-${index});
+  if (!radio) return;
+  radio.checked = true;
+  document.getElementById("request-form").scrollIntoView({ behavior: "smooth" });
+}
 
 /* ---------------- Язык ---------------- */
 
@@ -63,13 +82,13 @@ function renderTours(lang) {
 
   list.innerHTML = "";
 
-  if (typeof TOURS === "undefined" || !Array.isArray(TOURS) || TOURS.length === 0) {
-    list.innerHTML = `<p class="tours-loading">${escapeHtml(strings.toursLoading || "…")}</p>`;
+  if (typeof TOURS === "undefined"  !Array.isArray(TOURS)  TOURS.length === 0) {
+    list.innerHTML = <p class="tours-loading">${escapeHtml(strings.toursLoading || "…")}</p>;
     return;
   }
 
   TOURS.forEach((tour, index) => {
-    const id = `tour-${index}`;
+    const id = tour-${index};
     const title = (tour.title && tour.title[lang]) || "";
     const description = (tour.description && tour.description[lang]) || "";
     const price = (tour.price && tour.price[lang]) || "";
@@ -79,23 +98,23 @@ function renderTours(lang) {
     card.setAttribute("for", id);
 
     const priceHtml = price
-      ? `<span class="tour-price">${escapeHtml(price)}</span>`
+      ? <span class="tour-price">${escapeHtml(price)}</span>
       : "";
 
     card.innerHTML = `
       <input type="radio" name="tour" id="${id}" value="${escapeHtml(title)}" required>
-      <span class="tour-body">
+[07.08.2026 00:27] r.o'tkirov: <span class="tour-body">
         <span class="tour-title">${escapeHtml(title)}</span>
         <span class="tour-desc">${escapeHtml(description)}</span>
         ${priceHtml}
       </span>
       <span class="tour-mark" aria-hidden="true"></span>
-    `;
+    ;
     list.appendChild(card);
   });
 
   if (checkedIndex !== null) {
-    const toRecheck = document.getElementById(`tour-${checkedIndex}`);
+    const toRecheck = document.getElementById(tour-${checkedIndex});
     if (toRecheck) toRecheck.checked = true;
   }
 }
@@ -185,9 +204,9 @@ function isValidPhone(value) {
 
 function normalizePhone(value) {
   const digits = value.replace(/\D/g, "");
-  if (digits.startsWith("998")) return `+${digits}`;
-  if (digits.length === 9) return `+998${digits}`;
-  return `+${digits}`;
+  if (digits.startsWith("998")) return +${digits};
+  if (digits.length === 9) return +998${digits};
+  return +${digits}`;
 }
 
 function showError(id) {
