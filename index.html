@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Открой Мир — Travel Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#home">
+        <span class="logo-mark"><img src="logo.png" data-logo-fallback alt=""></span>
+        <span class="logo-text">Открой Мир</span>
+      </a>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="uz">UZ</button>
+      </div>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-blob blob-1"></div>
+    <div class="hero-blob blob-2"></div>
+    <img class="hero-logo reveal" style="transition-delay:.05s" src="logo.png" data-logo-fallback alt="Открой Мир — Travel Guide">
+    <h1 class="hero-title reveal" style="transition-delay:.15s" data-i18n="heroTitle"></h1>
+    <p class="hero-sub reveal" style="transition-delay:.3s" data-i18n="heroSub"></p>
+    <button id="btn-start" class="btn btn-primary reveal" style="transition-delay:.45s" data-i18n="btnStart"></button>
+  </section>
+
+  <section id="tours" class="tours-section">
+    <h2 class="section-title reveal" data-i18n="toursTitle"></h2>
+    <div id="tours-list" class="tours-list"></div>
+  </section>
+
+  <section id="booking" class="booking-section">
+    <div class="booking-card reveal">
+      <h2 data-i18n="formTitle"></h2>
+      <p class="form-note" data-i18n="formNote"></p>
+      <form id="lead-form" novalidate>
+        <div class="form-group">
+          <label for="tour-select" data-i18n="labelTour"></label>
+          <select id="tour-select" required></select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="surname" data-i18n="labelSurname"></label>
+            <input id="surname" type="text" autocomplete="family-name" minlength="2" required data-i18n-ph="phSurname">
+          </div>
+          <div class="form-group">
+            <label for="name" data-i18n="labelName"></label>
+            <input id="name" type="text" autocomplete="given-name" minlength="2" required data-i18n-ph="phName">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone" data-i18n="labelPhone"></label>
+          <input id="phone" type="tel" autocomplete="tel" placeholder="+998 90 123 45 67" required>
+        </div>
+        <button type="submit" id="submit-btn" class="btn btn-primary btn-full" data-i18n="btnSubmit"></button>
+        <p id="form-message" class="form-message" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <div id="confirm-modal" class="modal-overlay hidden" aria-hidden="true">
+    <div class="modal-card">
+      <p class="modal-title" data-i18n="modalTitle"></p>
+      <p class="modal-text" data-i18n="modalText"></p>
+      <div class="modal-buttons">
+        <button id="modal-cancel" class="modal-btn" data-i18n="modalCancel"></button>
+        <button id="modal-confirm" class="modal-btn" data-i18n="modalConfirm"></button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-socials reveal">
+      <a class="social-btn" href="https://instagram.com/otkroymir_" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4.2"/>
+          <circle cx="17.3" cy="6.7" r="1.3" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+      <a class="social-btn" href="https://t.me/otkriymirtg" target="_blank" rel="noopener" aria-label="Telegram">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3 20.5l19-8.5L3 3.5v6.5l13 2.5-13 2.5v5.5z"/>
+        </svg>
+      </a>
+    </div>
+    <p class="footer-copy">© 2026 Открой Мир · Travel Guide</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
