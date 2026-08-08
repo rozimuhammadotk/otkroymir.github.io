@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Открой Мир — Travel Guide</title>
+    <link rel="icon" type="image/png" href="logo.png">
+  <meta name="description" content="Открой Мир — авторские туры: Алтай, Байкал, Камчатка. Путешествия, после которых мир не будет прежним.">
+  <meta name="theme-color" id="meta-theme" content="#f5fafd">
+  <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,10 +18,21 @@
         <span class="logo-mark"><img src="logo.png" data-logo-fallback alt=""></span>
         <span class="logo-text">Открой Мир</span>
       </a>
-      <div class="lang-switch" role="group" aria-label="Language">
-        <button class="lang-btn active" data-lang="ru">RU</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="uz">UZ</button>
+      <div class="header-controls">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Тема / Theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="4.5"/>
+            <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/>
+          </svg>
+        </button>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang-btn active" data-lang="ru">RU</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="uz">UZ</button>
+        </div>
       </div>
     </div>
   </header>
@@ -28,7 +43,7 @@
     <img class="hero-logo reveal" style="transition-delay:.05s" src="logo.png" data-logo-fallback alt="Открой Мир — Travel Guide">
     <h1 class="hero-title reveal" style="transition-delay:.15s" data-i18n="heroTitle"></h1>
     <p class="hero-sub reveal" style="transition-delay:.3s" data-i18n="heroSub"></p>
-    <button id="btn-start" class="btn btn-primary reveal" style="transition-delay:.45s" data-i18n="btnStart"></button>
+    <button id="btn-start" class="btn btn-primary btn-glow reveal" style="transition-delay:.45s" data-i18n="btnStart"></button>
   </section>
 
   <section id="tours" class="tours-section">
@@ -59,7 +74,7 @@
           <label for="phone" data-i18n="labelPhone"></label>
           <input id="phone" type="tel" autocomplete="tel" placeholder="+998 90 123 45 67" required>
         </div>
-        <button type="submit" id="submit-btn" class="btn btn-primary btn-full" data-i18n="btnSubmit"></button>
+        <button type="submit" id="submit-btn" class="btn btn-primary btn-full btn-glow" data-i18n="btnSubmit"></button>
         <p id="form-message" class="form-message" role="status"></p>
       </form>
     </div>
@@ -76,6 +91,17 @@
     </div>
   </div>
 
+    <!-- 🔍 ПОЛНОЭКРАННЫЙ ПРОСМОТР ФОТО -->
+  <div id="lightbox" class="lightbox hidden" aria-hidden="true">
+    <button class="lb-btn lb-close" aria-label="Закрыть">✕</button>
+    <button class="lb-btn lb-prev" aria-label="Назад">‹</button>
+    <figure class="lb-stage">
+      <img id="lb-img" src="" alt="">
+      <figcaption id="lb-caption"></figcaption>
+    </figure>
+    <button class="lb-btn lb-next" aria-label="Вперёд">›</button>
+  </div>
+
   <footer class="site-footer">
     <div class="footer-socials reveal">
       <a class="social-btn" href="https://instagram.com/otkroymir_" target="_blank" rel="noopener" aria-label="Instagram">
@@ -85,7 +111,7 @@
           <circle cx="17.3" cy="6.7" r="1.3" fill="currentColor" stroke="none"/>
         </svg>
       </a>
-      <a class="social-btn" href="https://t.me/otkriymirtg" target="_blank" rel="noopener" aria-label="Telegram">
+      <a class="social-btn" href="https://t.me/otkroymirtg" target="_blank" rel="noopener" aria-label="Telegram">
         <svg viewBox="0 0 24 24" fill="currentColor">
           <path d="M3 20.5l19-8.5L3 3.5v6.5l13 2.5-13 2.5v5.5z"/>
         </svg>
