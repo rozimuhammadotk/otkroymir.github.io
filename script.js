@@ -251,7 +251,7 @@ function renderTours() {
       </div>
       <div class="tour-expand"><div class="tour-expand-inner">
         <div class="tour-gallery">${tour.gallery.map(g => imgTag(g, "", tourField(tour, "title"))).join("")}</div>
-        <div class="tour-details">${nl(tourField(tour, "details")) || nl(tourField(tour, "description"))}</div>
+        <div class="tour-details">${(nl(tourField(tour, "details")) || nl(tourField(tour, "description"))).replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/&lt;b&gt;/g,'<b>').replace(/&lt;\/b&gt;/g,'</b>')}</div>
       </div></div>
       <div class="tour-controls">
         <span class="tour-price">${formatPrice(tour.price)}</span>
