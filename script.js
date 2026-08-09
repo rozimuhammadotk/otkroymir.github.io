@@ -9,68 +9,69 @@ const WEBHOOK_URL = "https://api.telebotcreator.com/new-webhook?data=gAAAAABqdXj
 //    details — ПОДРОБНЫЙ текст для кнопки «Обзор»; \n = перенос строки.
 //    *_en / *_uz — переводы (необязательно). gallery — до 6 фото.
 const TOURS = [
-  {
+   {
     id: "koksu",
-    title: "Koksu: 3 дня кемпинга",
-    title_en: "Koksu: 3-day camping",
-    title_uz: "Koksu: 3 kunlik kamping",
-    description: "Три дня среди гор: трансфер, питание, гид и всё снаряжение включены.",
-    description_en: "Three days in the mountains: transfer, meals, guide and all gear included.",
-    description_uz: "Tog'lar orasida uch kun: transfer, ovqatlanish, gid va barcha jihozlar kiritilgan.",
-    details: "Тур narxiga quyidagilar kiradi:\n✅ Трансфер (Ташкент — точка старта — Ташкент)\n✅ 3 дня / 2 ночи в кемпинге\n✅ 3-разовое питание и тёплые напитки\n✅ Услуги гида и повара\n✅ Снаряжение: палатка, спальник, коврик\n\nВас ждут: горный воздух, вечер у костра, рассвет над вершинами и фотопрогулки.",
-    details_en: "Included:\n✅ Transfer (Tashkent — start point — Tashkent)\n✅ 3 days / 2 nights camping\n✅ 3 meals a day and hot drinks\n✅ Guide and cook services\n✅ Gear: tent, sleeping bag, mat\n\nWaiting for you: mountain air, campfire evenings and sunrise over the peaks.",
-    details_uz: "Narxga kiradi:\n✅ Transfer (Toshkent — boshlanish nuqtasi — Toshkent)\n✅ 3 kun / 2 tun kamping\n✅ Kuniga 3 mahsul ovqatlanish\n✅ Gid va oshpaza xizmati\n✅ Jihozlar: palatka, spalnik, kovrik\n\nSizni kutmoqda: tog' havosi, oloq boshida oqshom va cho'qqilar uzra tong.",
-    price: 9800000,
-    photo: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=60",
+    title: "Ko'ksu: 3 дня кемпинга",
+    title_en: "Koksu: 3-day camping tour",
+    title_uz: "Ko'ksu yorig'iga 3 kunlik camping tur",
+    description: "3 дня в ущелье Ко'ксу: трансфер, питание, гид и всё снаряжение включены.",
+    description_en: "3 days in the Koksu gorge: transfer, meals, guide and all gear included.",
+    description_uz: "Ko'ksu yorig'ida 3 kun: transfer, ovqatlanish, gid va barcha jihozlar kiritilgan.",
+    details: "🗺 Что входит в стоимость тура?\n🚌 Удобный трансфер (Ташкент — точка старта — Ташкент)\n🍽️ 3 раза в день вкусное и горячее питание\n🧑‍️ Услуги опытного гида\n⛺ Всё необходимое снаряжение для кемпинга (палатка, спальный мешок, коврик)\n🎟️ Экосбор и вход в заповедник\n\n✨ Что вас ждёт в путешествии?\n🍲 Вкусная еда: горячие и аппетитные блюда, приготовленные на свежем воздухе у костра.\n🎲 Отличный отдых: весёлая и дружная компания, разнообразные уютные игры и беседы у вечернего костра.\n📸 Великолепная природа: неповторимые, волшебные виды ущелья Ко'ксу и чистый горный воздух!\n\n📍 <b>Ташкентская область, Бостанлыкский район.</b>",
+    details_en: "🗺 What's included in the tour price?\n🚌 Comfortable transfer (Tashkent — starting point — Tashkent)\n🍽️ Delicious hot meals 3 times a day\n🧑‍️ Experienced guide service\n All necessary camping gear (tent, sleeping bag, mat)\n🎟️ Eco-tourism and reserve entry fees\n\n✨ What awaits you on the trip?\n🍲 Delicious food: hot, tasty dishes cooked outdoors around the campfire.\n🎲 Great recreation: a fun, friendly group, cozy games and conversations around the evening fire.\n📸 Stunning nature: the unique, magical landscapes of the Koksu gorge and fresh mountain air!",
+    details_uz: "🗺 Tur narxiga nimalar kiradi?\n🚌 Qulay transfer (Toshkent — boshlanish nuqtasi — Toshkent)\n🍽️ 3 kun davomida 3 mahal mazali va issiq ovqatlar\n🧑‍️ Tajribali gid xizmati\n⛺ Camping uchun barcha kerakli anjomlar (palatka, spalniy meshok, karemat)\n🎟️ Ekotizm va qo'riqxona kirish to'lovlari\n\n✨ Sayohatda sizni nimalar kutmoqda?\n🍲 Mazali taomlar: ochiq havoda, gulxan atrofida pishirilgan issiq va lazzatli ovqatlar.\n🎲 Ajoyib hordiq: quvnoq va ahil jamoa, kechki gulxan atrofida turli xil samimiy o'yinlar hamda suhbatlar.\n📸 Muazzam tabiat: Ko'ksu yorig'ining takrorlanmas, sehrli manzaralari va toza tog' havosi!",
+    price: 1200000,
+    photo: "https://uznews.uz/storage/uploads/68/10/8b/file_68108b9e8c279_avif.avif",
     gallery: [
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=60",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=60",
-      "https://images.unsplash.com/photo-1482938289607-e9573fc25bb2?auto=format&fit=crop&w=800&q=60",
-      "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=800&q=60",
-      "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=800&q=60"
+      "https://eurasia.travel/wp-content/uploads/wpforo/attachments/11/1229-photo2026-03-2709-37-06.jpg",
+      "https://d3fphkxyf5o5bm.cloudfront.net/image-resize/format=webp,w=1920/QwRY54Li1HMwD7oNfod9Vp09whWbMlytwrrSjiSUQV",
+      "https://uznews.uz/storage/uploads/68/10/8b/file_68108ba360e16_avif.avif",
+      "https://uznews.uz/storage/uploads/68/10/8b/file_68108b9daa1da_avif.avif",
+      "https://uznews.uz/storage/uploads/68/10/8b/file_68108ba130c32_avif.avif"
     ]
   },
-  {
-    id: "baikal",
-    title: "Байкал: зимняя сказка",
-    title_en: "Baikal: Winter Tale",
-    title_uz: "Baykal: qishki ertak",
-    description: "Прозрачный лёд, пузыри воздуха подо льдом и шаманские легенды.",
-    description_en: "Crystal-clear ice, frozen bubbles and shaman legends.",
-    description_uz: "Shaffof muz, muz ostidagi pufakchalar va shaman afsonalari.",
-    details: "Что в программе:\n✅ Джип-тур по льду Байкала\n✅ Фотостопы у пузырей и торосов\n✅ Горячий обед на берегу\n✅ Посещение шаман-скалы\n\nВозьмите с собой: тёплую куртку, перчатки и солнечные очки — лёд слепит!",
-    details_en: "Program:\n✅ Jeep tour over Baikal ice\n✅ Photo stops at bubbles and hummocks\n✅ Hot lunch on the shore\n✅ Shaman Rock visit\n\nBring: a warm jacket, gloves and sunglasses — the ice is bright!",
-    details_uz: "Dastur:\n✅ Baykal muzi bo'ylab jip-safar\n✅ Pufakchalar va toroslar yonida fotostop\n✅ Sohilda issiq tushlik\n✅ Shaman qoyasiga tashrif\n\nOling: issiq kurtka, qo'lqop va ko'zoynak — muz yaltiraydi!",
-    price: 11500000,
-    photo: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=800&q=60",
+    {
+    id: "kulasya",
+    title: "Кулосья: тур одного дня",
+    title_en: "Kulasya Waterfall: one-day tour",
+    title_uz: "Kulasya sharsharasiga bir kunlik tur",
+    description: "Однодневный тур к водопаду Кулосьи: отдых у водопада, лёгкий трекинг и обед на свежем воздухе.",
+    description_en: "A one-day trip to the Kulasya waterfall: rest by the falls, light trekking and a tasty outdoor lunch.",
+    description_uz: "Kulasya sharsharasiga bir kunlik tur: sharshara yonida hordiq, yengil treking va ochiq havoda mazali tushlik.",
+    details: "🌊 Водопад Кулосьи незабываемый тур одного дня!\nХотите в жаркие дни отдохнуть в прохладной горной тени рядом с шумящим водопадом? Тогда это приключение именно для вас! 🏔✨\n🗓 Дата: 22 августа (1-дневный тур)\n💰 Цена: 199 000 сум (с человека)\n\n💵 Что входит в стоимость тура?\n🚌 Удобный трансфер (Ташкент — Кулосья — Ташкент)\n👨‍🌾 Услуги опытного гида (сопровождение и безопасность)\n🍱 Вкусный обед (на свежем воздухе)\n🎟 Экосбор и вход в заповедник\n\n✨ Что вас ждёт в путешествии?\n💧 Чудесный водопад Куласы: красивый водопад среди горных каньонов и прохладный бриз.\n📸 Отличная фотосессия: яркие и запоминающиеся снимки на лоне природы.\n🚶‍♂️ Лёгкий трекинг: приятная прогулка по чистому и прохладному горному воздуху.\n👥 Весёлая компания: новые друзья и тёплая атмосфера!\n\n🎒 Рекомендуем взять с собой:\n🥾 Удобные кроссовки для горных прогулок\n🧢 Головной убор от солнца и очки\n💧 Личную бутылку воды\n🆔 Документ, удостоверяющий личность (паспорт / ID)\n\n⚠️ Количество мест ограничено! Забронируйте место для себя и друзей прямо сейчас!\n\n<b>📍 Бурчмулла, Бостанлыкский район, Ташкентская область.</b>",
+    details_en: "🌊 Kulasya Waterfall: an unforgettable one-day tour!\nWant to escape the hot days and relax in the cool, pure mountain air beside a roaring waterfall? Then this adventure is made for you! 🏔✨\n🗓 Date: August 22 (1-day tour)\n💰 Price: 199,000 UZS (per person)\n\n💵 What's included in the tour price?\n🚌 Comfortable transfer (Tashkent — Kulasya — Tashkent)\n👨‍🌾 Experienced guide service (companionship and safety)\n🍱 Tasty lunch (outdoors)\n🎟 Eco-tourism and reserve entry fees\n\n✨ What awaits you on the trip?\n💧 The magical Kulasya waterfall: a beautiful waterfall among mountain canyons and a cool breeze.\n📸 Great photo session: a chance to take bright, memorable pictures in the heart of nature.\n🚶‍♂️ Light trekking: a pleasant walk through fresh, cool mountain air.\n👥 Fun company: new friends and a warm atmosphere!\n\n🎒 Recommended to bring with you:\n🥾 Comfortable sneakers for mountain walking\n🧢 Sun-protective hat and sunglasses\n💧 Personal water bottle\n🆔 ID document (passport / ID)\n\n⚠️ The number of seats is limited! Book a spot for you and your friends right now!\n\n<b>📍 Burchmulla, Bostanlyk district, Tashkent region.</b>",
+    details_uz: "🌊 Kulasya sharsharasiga bir kunlik tur!\nIssiq kunlarda tog'ning salqin va musaffo bag'rida, shovillab turgan sharshara yonida hordiq chiqarishni xohlaysizmi? Unda ushbu sarguzasht aynan siz uchun! 🏔✨\n🗓 Sana: 22-avgust (1 kunlik tur)\n💰 Narxi: 199 000 so'm (bir kishi uchun)\n\n💵 Tur narxiga nimalar kiradi?\n🚌 Qulay Transfer (Toshkent – Kulasya – Toshkent)\n👨‍🌾 Tajribali Gid xizmati (yo'ldosh va xavfsizlik)\n🍱 Mazali Tushlik (ochiq havoda)\n🎟 Ekotizim va qo'riqxona kirish to'lovlari\n\n✨ Sayohatda sizni nimalar kutmoqda?\n💧 Mo'jizakor Kulasya sharsharasi: tog' kanyonlari orasida joylashgan go'zal sharshara va salqin shabboda.\n📸 Ajoyib fotosessiya: tabiat bag'rida esda qolarli va yorqin rasmlarga tushish imkoniyati.\n🚶‍♂️ Yengil treking: salqin va toza tog' havosi bo'ylab maroqli yurish.\n👥 Quvnoq jamoa: yangi do'stlar va samimiy muhit!\n\n🎒 O'zingiz bilan olishingiz tavsiya etiladi:\n🥾 Tog'da yurish uchun qulay krossovka\n🧢 Quyoshdan himoya qiluvchi bosh kiyim va ko'zoynak\n💧 Shaxsiy suv idishi\n🆔 Shaxsni tasdiqlovchi hujjat (Pasport / ID)\n\n⚠️ Joylar soni chegaralangan! Hoziroq o'zingiz va do'stlaringiz uchun joy band qiling!\n\n<b>📍 Burchmulla, Bo‘stonliq tumani, Toshkent viloyati.</b>",
+    price: 199000,
+    photo: "https://centralasia-adventures.com/image/new/67f58d6fc2-436.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=60",
-      "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=800&q=60",
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=60",
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=60",
-      "https://images.unsplash.com/photo-1501785888041-af377d22eeff?auto=format&fit=crop&w=800&q=60"
+      "https://woyager.uz/wp-content/uploads//%D0%9A%D1%83%D0%BB%D0%BE%D1%81%D1%8C%D1%8F-%D0%BD%D0%B8%D0%B6%D0%BD%D0%B8%D0%B5-2021-%D1%81%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8C/dsc08271.webp",
+      "https://woyager.uz/wp-content/uploads//%D0%9A%D1%83%D0%BB%D0%BE%D1%81%D1%8C%D1%8F-%D0%BD%D0%B8%D0%B6%D0%BD%D0%B8%D0%B5-2021-%D1%81%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8C/dsc08252.webp",
+      "https://woyager.uz/wp-content/uploads//%D0%9A%D1%83%D0%BB%D0%BE%D1%81%D1%8C%D1%8F-%D0%BD%D0%B8%D0%B6%D0%BD%D0%B8%D0%B5-2021-%D1%81%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8C/dsc08305.webp",
+      "https://woyager.uz/wp-content/uploads//%D0%9A%D1%83%D0%BB%D0%BE%D1%81%D1%8C%D1%8F-%D0%BD%D0%B8%D0%B6%D0%BD%D0%B8%D0%B5-2021-%D1%81%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8C/dsc08236.webp",
+      "https://woyager.uz/wp-content/uploads//%D0%9A%D1%83%D0%BB%D0%BE%D1%81%D1%8C%D1%8F-%D0%BD%D0%B8%D0%B6%D0%BD%D0%B8%D0%B5-2021-%D1%81%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8C/dsc08286-960x540.webp"
     ]
   },
-  {
-    id: "kamchatka",
-    title: "Камчатка",
-    title_en: "Kamchatka",
-    title_uz: "Kamchatka",
-    description: "Вулканы, океан и термальные источники.",
-    description_en: "Volcanoes, the ocean and hot springs.",
-    description_uz: "Vulqonlar, okean va issiq buloqlar.",
-    details: "Главные впечатления:\n✅ Восхождение на авачинский вулкан\n✅ Тихий океан и чёрный пляж\n✅ Термальные источники\n✅ Морская прогулка к скалам Старичков\n\nУровень нагрузки: средний, специальная подготовка не нужна.",
-    details_en: "Highlights:\n✅ Avachinsky volcano hike\n✅ The Pacific and the black sand beach\n✅ Hot springs\n✅ Boat trip to Starichkov Rocks\n\nEffort level: moderate, no training needed.",
-    details_uz: "Asosiy taassurotlar:\n✅ Avachinskiy vulqoniga ko'tarilish\n✅ Tinch okean va qora plyaj\n✅ Issiq buloqlar\n✅ Starichkov qoyalariga dengiz sayri\n\nYuklama: o'rtacha, maxsus tayyorgarlik shart emas.",
-    price: 19900000,
-    photo: "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=800&q=60",
+    {
+    id: "charvak",
+    title: "Чарвак: кино-кемпинг, 2 дня",
+    title_en: "Charvak: cinema camping, 2-day tour",
+    title_uz: "Chorvoqda kino-kemping: 2 kunlik tur",
+    description: "2 дня и 1 ночь на Чарваке: катер, кино под открытым небом, кемпинг и ужин у воды.",
+    description_en: "2 days / 1 night at Charvak: speedboat ride, open-air cinema, camping and dinners by the water.",
+    description_uz: "Chorvoqda 2 kun / 1 kecha: katerda uchish, ochiq osmon ostida kino, kemping va suv bo'yida kechki ovqat.",
+    details: "🎬 Кинотур в Чарваке — незабываемый кино-кемпинг! 🌊⛺️\nХотите провести последние дни лета у голубого Чарвакского водохранилища — с кино под открытым небом и захватывающими приключениями? Тогда этот тур именно для вас!\n🗓 Дата: 30–31 августа (2 дня / 1 ночь)\n💰 Цена: 350 000 сум (с человека)\n📍 Локация: Чарвак\n\n💵 Что входит в стоимость тура?\n🚤 Полёт на катере: незабываемая быстрая поездка и драйв по чистым голубым водам Чарвака!\n🎬 Вечерний кинопоказ: романтический просмотр фильма у воды, под открытым небом и звёздами.\n🍽 Ужин в течение 2 дней: специально приготовленные вкусные вечерние блюда.\n⛺️ Кемпинг: ночной лагерь, ночёвка в палатке и душевный отдых у костра.\n\n✨ Что вас ждёт в путешествии?\n🌅 Великолепные виды Чарвака: закат и чистый горно-водный воздух.\n📸 Отличная фотосессия: эстетичные кадры на катере и на территории кемпинга.\n🔥 Атмосферный вечер у костра: музыка, весёлая компания и новые друзья.\n\n🎒 Путешественникам рекомендуется взять с собой:\n🧥 Тёплую одежду — ночью бывает прохладно\n🩳 Купальники и полотенце\n🧢 Одежду и очки для защиты от солнца\n💡 Личные средства гигиены и пауэрбанк\n\n📍 <b>Ташкентская область, Бостанлыкский район.</b>",
+    details_en: "🎬 Cinema tour in Charvak — an unforgettable movie-camping! 🌊️\nWant to spend the last days of summer by the blue Charvak reservoir with open-air cinema and exciting adventures? Then this tour is made for you!\n🗓 Date: August 30–31 (2 days / 1 night)\n💰 Price: 350,000 UZS (per person)\n📍 Location: Charvak\n\n💵 What's included in the tour price?\n🚤 Speedboat ride: an unforgettable fast ride and pure drive on the clean blue waters of Charvak!\n🎬 Evening cinema show: a romantic movie by the water, under the open sky and stars.\n🍽 Dinners for 2 days: specially prepared delicious evening dishes.\n⛺️ Camping: night camp, sleeping in tents and cozy rest around the campfire.\n\n✨ What awaits you on the trip?\n🌅 Stunning views of Charvak: sunsets and fresh mountain-water air.\n📸 Great photo session: aesthetic shots on the speedboat and around the campsite.\n🔥 Atmospheric night around the campfire: music, a fun group and new friends.\n\n🎒 Travelers are recommended to bring:\n🧥 Warmer clothes — it gets cool at night\n🩳 Swimwear and a towel\n🧢 Sun-protective clothing / sunglasses\n💡 Personal hygiene items and a power bank\n\n📍 <b>Tashkent region, Bostanlyk district.</b>",
+    details_uz: "🎬 CINEMA TOUR IN CHARVAK — CHORVOQDA UNUTILMAS KINO-KEMPING! 🌊⛺️\nYozning so'nggi kunlarini moviy Chorvoq suv ombori bo'yida, ochiq osmon ostidagi kino va hayajonli sarguzashtlar bilan o'tkazishni xohlaysizmi? Unda ushbu tur aynan siz uchun!\n🗓 Sana: 30–31-avgust (2 kun / 1 kecha)\n💰 Narxi: 350 000 so'm (bir kishi uchun)\n📍 Lokalizatsiya: Chorvoq\n\n💵 Tur narxiga nimalar kiradi?\n🚤 Katerda uchish: Chorvoqning toza va moviy suvida tezkor katerda unutilmas uchish hamda drayv!\n🎬 Kechki kino-namoyish: suv bo'yida, ochiq osmon va yulduzlar ostida romantik kino tomoshasi.\n🍽 2 kunlik kechki ovqat: maxsus tayyorlangan mazali kechki taomlar.\n⛺️ Camping: tungi lager, palatkada tunash va gulxan atrofida samimiy hordiq.\n\n✨ Sayohatda sizni nimalar kutmoqda?\n🌅 Chorvoqning muazzam manzaralari: quyosh botishi va toza tog'-suv havosi.\n📸 Ajoyib fotosessiya: katerda va kemping hududida estetik suratlar.\n🔥 Gulxan atrofidagi atmosferali kecha: musiqa, quvnoq davra va yangi do'stlar.\n\n🎒 Sayohatchilar o'zlari bilan olishi tavsiya etiladi:\n🧥 Kechasi salqin bo'lgani uchun issiqroq kiyim\n🩳 Cho'milish kiyimlari va sochiq\n🧢 Quyoshdan asrovchi kiyim / ko'zoynak\n💡 Shaxsiy gigiyena vositalari va quvvatlantirgich (powerbank)\n\n📍 <b>Toshkent viloyati, Bo‘stonliq tumani.</b>",
+    price: 350000,
+    photo: "https://centralasia-adventures.com/image/new/charvak.html-n.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=800&q=60",
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=60",
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=60",
-      "https://images.unsplash.com/photo-1482938289607-e9573fc25bb2?auto=format&fit=crop&w=800&q=60"
+      "https://7d9e88a8-f178-4098-bea5-48d960920605.selcdn.net/12c1764b-25aa-4733-afcc-5decf37a4cc9/-/format/webp/-/resize/1300x/",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/485700784.jpg?k=280d73084efb7d9d4fdfcff4e2dd833091e4d5325d0e222ef3b9050c87ba0cf3&o=",
+      "https://www.afisha.uz/uploads/media/2013/07/0048832.jpg",
+      "https://www.gazeta.uz/media/img/2015/01/nhjl1514226082945947_l.jpg",
+      "https://centralasia-adventures.com/image/data/info/uzbekistan/charvak/03.jpg"
     ]
-  }
+  },
 ];
 
 /* ═══════════════════════════════════════════════════════
@@ -81,8 +82,8 @@ const I18N = {
   ru: {
     heroTitle: "Откройте мир вместе с нами",
     heroSub: "Авторские маршруты, продуманные до мелочей. Путешествия, после которых мир уже не будет прежним.",
-    btnStart: "В путь", toursTitle: "Наши туры",
-    btnReview: "Обзор", btnHide: "Скрыть", btnBook: "Хочу туда",
+    btnStart: "В путь!", toursTitle: "Наши туры",
+    btnReview: "Подробнее", btnHide: "Скрыть", btnBook: "Хочу туда!",
     formTitle: "Оформление заявки",
     formNote: "Заполните форму — все поля обязательны. Мы бережно относимся к вашему времени.",
     labelTour: "Тур", selectPlaceholder: "Выберите тур",
@@ -105,8 +106,8 @@ const I18N = {
   en: {
     heroTitle: "Discover the world with us",
     heroSub: "Thoughtfully crafted routes. Journeys that change the way you see the world.",
-    btnStart: "Let's go", toursTitle: "Our tours",
-    btnReview: "Overview", btnHide: "Hide", btnBook: "I want to go",
+    btnStart: "Let's go!", toursTitle: "Our tours",
+    btnReview: "Details", btnHide: "Hide", btnBook: "I want to go!",
     formTitle: "Booking request",
     formNote: "Fill in the form — all fields are required.",
     labelTour: "Tour", selectPlaceholder: "Choose a tour",
@@ -129,8 +130,8 @@ const I18N = {
   uz: {
     heroTitle: "Biz bilan dunyoni kashf eting",
     heroSub: "Har bir tafsilotigacha o'ylangan marshrutlar. Dunyoqarashingizni o'zgartiradigan sayohatlar.",
-    btnStart: "Yo'lga", toursTitle: "Bizning turlar",
-    btnReview: "Ko'rib chiqish", btnHide: "Yashirish", btnBook: "U yerga bormoqchiman",
+    btnStart: "Yo'lga!", toursTitle: "Bizning turlar",
+    btnReview: "Tafsilotlar", btnHide: "Yashirish", btnBook: "Tanlash",
     formTitle: "Ariza topshirish",
     formNote: "Formani to'ldiring — barcha maydonlar majburiy. Vaqtingizni qadrlaymiz.",
     labelTour: "Tur", selectPlaceholder: "Turni tanlang",
@@ -201,7 +202,7 @@ const io = new IntersectionObserver((entries) => {
       io.unobserve(en.target);
     }
   });
-}, { threshold: .12 });
+}, { threshold: .05, rootMargin: "0px 0px -8% 0px" });
 function observeReveals() {
   document.querySelectorAll(".reveal:not(.in)").forEach(el => io.observe(el));
 }
@@ -225,6 +226,16 @@ function applyLang() {
 
 function renderTours() {
   const list = $("tours-list");
+
+  /* запоминаем состояние карточек ДО перерисовки */
+  const wasExpanded = new Set(), scrolls = {};
+  const hadCards = list.querySelectorAll(".tour-card").length > 0;
+  list.querySelectorAll(".tour-card").forEach(c => {
+    if (c.classList.contains("expanded")) wasExpanded.add(c.dataset.id);
+    const g = c.querySelector(".tour-gallery");
+    if (g) scrolls[c.dataset.id] = g.scrollLeft;
+  });
+
   if (!TOURS.length) { list.innerHTML = `<p class="tours-empty">${t("emptyTours")}</p>`; return; }
   list.innerHTML = TOURS.map(tour => `
     <article class="tour-card reveal" data-id="${tour.id}">
@@ -249,10 +260,33 @@ function renderTours() {
     </article>`).join("");
 
   document.querySelectorAll(".tour-card").forEach((card, i) => {
-    card.style.transitionDelay = Math.min(i, 5) * 80 + "ms";
-    initGalleryAutoScroll(card.querySelector(".tour-gallery"));
+    const id = card.dataset.id;
+
+    if (hadCards) {
+      /* ✅ СМЕНА ЯЗЫКА: все карточки — мгновенно, без анимации */
+      card.classList.add("in", "done");
+    } else {
+      /* первая загрузка: красивое каскадное появление */
+      card.style.transitionDelay = Math.min(i, 5) * 80 + "ms";
+    }
+
+    /* открытые карточки остаются открытыми */
+    if (wasExpanded.has(id)) {
+      card.classList.add("expanded");
+      const btn = card.querySelector(".btn-review");
+      if (btn) btn.textContent = t("btnHide");
+    }
+
+    /* лента фото остаётся на том же кадре */
+    const g = card.querySelector(".tour-gallery");
+    if (g) {
+      if (scrolls[id]) g.scrollLeft = scrolls[id];
+      initGalleryAutoScroll(g);
+    }
   });
-  observeReveals();
+
+  /* анимация появления — только при первой загрузке */
+  if (!hadCards) observeReveals();
 }
 
 /* 🎞 Галерея листается сама; тронули — пауза */
@@ -401,7 +435,19 @@ document.querySelectorAll(".lang-btn").forEach(btn => {
     lang = btn.dataset.lang;
     localStorage.setItem("om_lang", lang);
     syncLangButtons();
+
+    /* ✅ запоминаем, где вы стоите на странице */
+    const y = window.scrollY;
+    const holdScroll = () => window.scrollTo({ top: y, left: 0, behavior: "instant" });
+
+    document.body.classList.add("no-anim");   /* гасим все анимации на время смены языка */
     applyLang();
+
+    /* ✅ возвращаем на то же место (трижды — до, во время и после перерасчёта макета) */
+    holdScroll();
+    requestAnimationFrame(holdScroll);
+    setTimeout(holdScroll, 80);
+    setTimeout(() => document.body.classList.remove("no-anim"), 400);
   });
 });
 syncLangButtons();
