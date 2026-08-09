@@ -5,6 +5,9 @@
 // 1) WEBHOOK: получите ссылку в боте командой /get_url и вставьте сюда
 const WEBHOOK_URL = "https://api.telebotcreator.com/new-webhook?data=gAAAAABqdXja_9Mn4J7fYDYopA4McIZ59EoKpuZBLg7gD7Qjm634oHB_jLGJ_fst0pumpChMC6BXL_irFEH-yg82JhIIdYLhbDdIyFQlMi61BcoS-v3yyKCngYYotDto_dW623O5bO2eZ-J1IZM_k14Eh4DAb3T-hggAIb361ksTNxQwcokHcqd0wXHKnt7zr0kUJ_PqESSq";
 
+// 2) GOOGLE-ТАБЛИЦА = АДМИН-ПАНЕЛЬ БЕЗ КОДА:
+//    вставьте опубликованную CSV-ссылку — и дальше туры правятся прямо в таблице
+const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSjD1uAUa-xKcHHNF99agtT1gT8U4w0joxcgfhBVv7dKRUkOYKYN2Aujcw58ew8DhOK3TEYzIUgVI3W/pub?output=csv";
 // 2) ТУРЫ. price — число в сумах. description — короткий текст (3 строки).
 //    details — ПОДРОБНЫЙ текст для кнопки «Обзор»; \n = перенос строки.
 //    *_en / *_uz — переводы (необязательно). gallery — до 6 фото.
@@ -452,9 +455,60 @@ document.querySelectorAll(".lang-btn").forEach(btn => {
 });
 syncLangButtons();
 
-applyLang();
-observeReveals();
-requestAnimationFrame(autoScrollLoop);
+/* ═══════════ 📊 GOOGLE-ТАБЛИЦА = АДМИН-ПАНЕЛЬ БЕЗ КОДА ═══════════ */
+function parseCSV(text){
+  const rows = []; let row = [], cell = "", inQ = false;
+  for (let i = 0; i < text.length; i++){
+    const ch = text[i];
+    if (inQ){
+      if (ch === '"'){ if (text[i+1] === '"'){ cell += '"'; i++; } else inQ = false; }
+      else cell += ch;
+    } else if (ch === '"') inQ = true;
+    else if (ch === ","){ row.push(cell); cell = ""; }
+    else if (ch === "\n"){ row.push(cell); rows.push(row); row = []; cell = ""; }
+    else if (ch !== "\r") cell += ch;
+  }
+  if (cell !== "" || row.length){ row.push(cell); rows.push(row); }
+  return rows;
+}
+
+async function loadToursFromSheet(){
+  if (!SHEET_URL || SHEET_URL.includes("ВСТАВЬТЕ")) return;
+  try{
+    const res = await fetch(SHEET_URL);
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const rows = parseCSV(await res.text());
+    if (rows.length < 2) return;
+    const head = rows[0].map(h => h.trim());
+    const loaded = [];
+    rows.slice(1).forEach((r, n) => {
+      const get = (k) => { const i = head.indexOf(k); return i >= 0 && r[i] ? String(r[i]).trim() : ""; };
+      const title = get("title");
+      if (!title) return;
+      const gallery = get("gallery").split(/\n/).flatMap(s => s.split("|")).map(s => s.trim()).filter(Boolean);
+      const photo = get("photo") || gallery[0] || "";
+      loaded.push({
+        id: get("id") || ("tour_" + (n + 1)),
+        title,
+        title_en: get("title_en"), title_uz: get("title_uz"),
+        description: get("description"), description_en: get("description_en"), description_uz: get("description_uz"),
+        details: get("details"), details_en: get("details_en"), details_uz: get("details_uz"),
+        price: Number(get("price").replace(/[^\d]/g, "")) || 0,
+        photo,
+        gallery: gallery.length ? gallery : (photo ? [photo] : [])
+      });
+    });
+    if (loaded.length){ TOURS.length = 0; loaded.forEach(t => TOURS.push(t)); }
+  }catch(e){
+    console.warn("Таблица недоступна — показываем встроенные туры.", e);
+  }
+}
+
+loadToursFromSheet().finally(() => {
+  applyLang();
+  observeReveals();
+  requestAnimationFrame(autoScrollLoop);
+});
 
 /* ═══════════ 🔍 ЛАЙТБОКС: фото открываются крупно ═══════════ */
 (function(){
