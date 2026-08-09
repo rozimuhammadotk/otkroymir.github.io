@@ -3,7 +3,7 @@
 ═══════════════════════════════════════════════════════ */
 
 // 1) WEBHOOK: получите ссылку в боте командой /get_url и вставьте сюда
-const WEBHOOK_URL = "https://api.telebotcreator.com/new-webhook?data=gAAAAABqdXja_9Mn4J7fYDYopA4McIZ59EoKpuZBLg7gD7Qjm634oHB_jLGJ_fst0pumpChMC6BXL_irFEH-yg82JhIIdYLhbDdIyFQlMi61BcoS-v3yyKCngYYotDto_dW623O5bO2eZ-J1IZM_k14Eh4DAb3T-hggAIb361ksTNxQwcokHcqd0wXHKnt7zr0kUJ_PqESSq";
+const WEBHOOK_URL = "https://api.telebotcreator.com/new-webhook?data=gAAAAABqeE4au_bYzz46evViYa-x6spTcbdp5ImvbdNFXWXdt_TIu_AvxgRQIKdS4-TF8CZfyMxF21im1eXfVkZ6xOAAz9dwNzaaSytwiYd88pby9x22cF7hsMVS7ROYheQ2njHCg-A1Txz9JlXzVqhibEsdctT3lhfT_i1e3YhDrCIHhchTQsr-xDaZYPw-s7AGixaSQEO1";
 
 // 2) GOOGLE-ТАБЛИЦА = АДМИН-ПАНЕЛЬ БЕЗ КОДА:
 //    вставьте опубликованную CSV-ссылку — и дальше туры правятся прямо в таблице
